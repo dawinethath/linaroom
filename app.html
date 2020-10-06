@@ -56,7 +56,10 @@
             {
                 display: none !important;
                 height: 0 !important;
-            }
+            }            
+        }
+        .invoiceTable td {
+            padding: 5px;
         }
     </style>
 
@@ -87,15 +90,15 @@
 
             <br />
 
-            <table width="100%" style="border: 1px solid black;">
+            <table width="100%" class="invoiceTable" style="border: 1px solid black;">
                 <thead>
                     <tr>
-                        <th align="left" style="border-bottom: 1px solid black;">ពណ៌នា</th>
-                        <th style="border-bottom: 1px solid black;">អំនាន</th>
-                        <th align="right" style="border-bottom: 1px solid black;">ចំនួន</th>
-                        <th align="right" style="border-bottom: 1px solid black;">គិត</th>
-                        <th align="right" style="border-bottom: 1px solid black;">តំលៃ</th>
-                        <th align="right" style="border-bottom: 1px solid black;">ទឹកប្រាក់</th>
+                        <th align="left" style="border-bottom: 1px solid black; height: 30px;">ពណ៌នា</th>
+                        <th style="border-bottom: 1px solid black; height: 30px;">អំនាន</th>
+                        <th align="right" style="border-bottom: 1px solid black; height: 30px;">ចំនួន</th>
+                        <th align="right" style="border-bottom: 1px solid black; height: 30px;">គិត</th>
+                        <th align="right" style="border-bottom: 1px solid black; height: 30px;">តំលៃ</th>
+                        <th align="right" style="border-bottom: 1px solid black; height: 30px;">ទឹកប្រាក់</th>
                     </tr>
                 </thead>
                 </tbody>
@@ -188,9 +191,9 @@
                 </tbody>
             </table>
 
-            <div align="right" style="font-size: large;">សរុបៈ #=kendo.toString(kendo.parseFloat(total), 'c3')#</div> 
+            <div align="right" style="font-size: x-large;">សរុបៈ #=kendo.toString(kendo.parseFloat(total), 'c3')#</div> 
 
-            <div style="min-height: 70px;"></div>      
+            <div style="min-height: 100px;"></div>
 
             <footer style="font-size: x-small; margin-bottom:0px; page-break-after: always;">
                 <div>
