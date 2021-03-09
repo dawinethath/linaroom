@@ -39,7 +39,10 @@
                         data-bind="value: month_of,
                                     events:{change: monthChanges}" />
 
-                <button class="btn btn-icon btn-inverse" onclick="javascript:window.print()">បោះពុម្ព</button>               
+                <button class="btn btn-icon btn-inverse" onclick="javascript:window.print()">បោះពុម្ព</button>
+
+                <span data-bind="text: dataSource.length"></span>
+                <span>វិក្កយបត្រ</span>
                 
             </div>                     
         </div>
@@ -72,19 +75,15 @@
             <table width="100%">
                 <tr>
                     <td>បន្ទប់</td>
-                    <td>
-                        #=room#
-                        -
-                        #=name#
-                    </td>
+                    <td>#=room#</td>
                     <td align="right">ប្រចាំខែ</td>
                     <td align="right">#=kendo.toString(new Date(month_of), "MM-yyyy")#</td>
                 </tr>
                 <tr>
-                    <td>ថ្ងៃចូល</td>
-                    <td>#=date_in#</td>
-                    <td></td>
-                    <td></td>
+                    <td>ឈ្មោះ</td>
+                    <td>#=name#</td>
+                    <td align="right"​>ថ្ងៃចូល</td>
+                    <td align="right">#=date_in#</td>
                 </tr>
             </table>
 
@@ -232,30 +231,32 @@
 
                             if(roa.length > 0 && sheetName=="print"){
                                 for(var i = 0; i < roa.length; i++) {
-                                    self.dataSource.push({
-                                        room: roa[i].room,
-                                        name: roa[i].name,
-                                        date_in: roa[i].date_in,
-                                        month_of: month_of,
-                                        wfrom: roa[i].wfrom,
-                                        wto: roa[i].wto,
-                                        wqty: roa[i].wqty,
-                                        wadd: roa[i].wadd!==undefined ? roa[i].wadd: "",
-                                        wprice: roa[i].wprice,
-                                        wamt: roa[i].wamt,
-                                        efrom: roa[i].efrom,
-                                        eto: roa[i].eto,
-                                        eqty: roa[i].eqty,
-                                        eadd: roa[i].eadd!==undefined ? roa[i].eadd: "",
-                                        eprice: roa[i].eprice,
-                                        eamt: roa[i].eamt,
-                                        balance: roa[i].balance,
-                                        trash: roa[i].trash,
-                                        service: roa[i].service,
-                                        deposit: roa[i].deposit,
-                                        rental: roa[i].rental,                                        
-                                        total: roa[i].total                                        
-                                    });   
+                                    if(roa[i].name && roa[i].date_in){
+                                        self.dataSource.push({
+                                            room: roa[i].room,
+                                            name: roa[i].name,
+                                            date_in: roa[i].date_in,
+                                            month_of: month_of,
+                                            wfrom: roa[i].wfrom,
+                                            wto: roa[i].wto,
+                                            wqty: roa[i].wqty,
+                                            wadd: roa[i].wadd!==undefined ? roa[i].wadd: "",
+                                            wprice: roa[i].wprice,
+                                            wamt: roa[i].wamt,
+                                            efrom: roa[i].efrom,
+                                            eto: roa[i].eto,
+                                            eqty: roa[i].eqty,
+                                            eadd: roa[i].eadd!==undefined ? roa[i].eadd: "",
+                                            eprice: roa[i].eprice,
+                                            eamt: roa[i].eamt,
+                                            balance: roa[i].balance,
+                                            trash: roa[i].trash,
+                                            service: roa[i].service,
+                                            deposit: roa[i].deposit,
+                                            rental: roa[i].rental,
+                                            total: roa[i].total
+                                        });
+                                    }   
                                 }
                             }
                         });
