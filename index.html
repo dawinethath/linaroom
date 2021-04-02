@@ -231,7 +231,7 @@
 
                             if(roa.length > 0 && sheetName=="print"){
                                 for(var i = 0; i < roa.length; i++) {
-                                    if(roa[i].wqty > 0 && roa[i].eqty > 0){
+                                    if(roa[i].wqty > 0 || roa[i].eqty > 0){
                                         self.dataSource.push({
                                             room: roa[i].room,
                                             name: roa[i].name,
